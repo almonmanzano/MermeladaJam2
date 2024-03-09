@@ -5,6 +5,15 @@ public class CameraShake : MonoBehaviour
 {
     [SerializeField] private bool useSize;
 
+    private Camera m_cam;
+    private float m_originalSize;
+
+    private void Start()
+    {
+        m_cam = GetComponent<Camera>();
+        m_originalSize = m_cam.orthographicSize;
+    }
+
     public void Shake(float duration, float magnitude)
     {
         if (useSize)
@@ -19,30 +28,28 @@ public class CameraShake : MonoBehaviour
 
     private IEnumerator ShakeUsingSize(float duration, float magnitude)
     {
-        Camera cam = GetComponent<Camera>();
-        float originalSize = cam.orthographicSize;
-        float otherSize = originalSize * magnitude;
+        float otherSize = m_originalSize * magnitude;
 
         duration /= 2f;
         float t = 0f;
-        while (!Mathf.Approximately(cam.orthographicSize, otherSize))
+        while (!Mathf.Approximately(m_cam.orthographicSize, otherSize))
         {
             t += Time.deltaTime / duration;
-            cam.orthographicSize = Mathf.Lerp(originalSize, otherSize, t);
+            m_cam.orthographicSize = Mathf.Lerp(m_originalSize, otherSize, t);
             yield return new WaitForEndOfFrame();
         }
 
-        otherSize = cam.orthographicSize;
+        otherSize = m_cam.orthographicSize;
 
         t = 0f;
-        while (!Mathf.Approximately(cam.orthographicSize, originalSize))
+        while (!Mathf.Approximately(m_cam.orthographicSize, m_originalSize))
         {
             t += Time.deltaTime / duration;
-            cam.orthographicSize = Mathf.Lerp(otherSize, originalSize, t);
+            m_cam.orthographicSize = Mathf.Lerp(otherSize, m_originalSize, t);
             yield return new WaitForEndOfFrame();
         }
 
-        cam.orthographicSize = originalSize;
+        m_cam.orthographicSize = m_originalSize;
     }
 
     private IEnumerator ShakeUsingPosition(float duration, float magnitude)

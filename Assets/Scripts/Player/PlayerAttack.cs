@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void UpgradeProjectileCooldown(float multiplier)
     {
-        m_fireballCooldown *= (1f + multiplier);
+        m_fireballCooldown *= (1f - multiplier);
     }
 
     private void Update()

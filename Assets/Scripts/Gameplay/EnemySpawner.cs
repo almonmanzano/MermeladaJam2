@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameObject[] m_enemyPrefabs;
     [SerializeField] private float m_minTimeBtwSpawns = 0.5f;
     [SerializeField] private float m_maxTimeBtwSpawns = 1.5f;
+    [SerializeField] private float m_timeBtwSpawnsDecrease = 0.01f;
     [SerializeField] private Transform m_upperLeftBound;
     [SerializeField] private Transform m_bottomRightBound;
 
@@ -21,6 +22,10 @@ public class EnemySpawner : MonoBehaviour
         float y = Random.Range(m_upperLeftBound.position.y, m_bottomRightBound.position.y);
         GameObject enemyObj = m_enemyPrefabs[Random.Range(0, m_enemyPrefabs.Length)];
         Instantiate(enemyObj, new Vector2(x, y), Quaternion.identity);
+
+        if (m_minTimeBtwSpawns > 0.1f) m_minTimeBtwSpawns -= m_timeBtwSpawnsDecrease;
+        if (m_maxTimeBtwSpawns > 0.3f) m_maxTimeBtwSpawns -= m_timeBtwSpawnsDecrease;
+        print(m_minTimeBtwSpawns);
 
         StartCoroutine(SpawnEnemy());
     }
