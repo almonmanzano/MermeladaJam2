@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class MoveInDirection2D : MonoBehaviour
 {
-    [SerializeField] private float m_moveSpeed = 10f;
+    private float m_moveSpeed = 30f;
+
+    public void SetMoveSpeed(float moveSpeed)
+    {
+        m_moveSpeed = moveSpeed;
+    }
 
     private void Update()
     {

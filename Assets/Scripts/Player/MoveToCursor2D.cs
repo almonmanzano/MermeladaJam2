@@ -7,6 +7,11 @@ public class MoveToCursor2D : MonoBehaviour
 
     private Vector2 m_direction;
 
+    public void UpgradeMoveSpeed(float multiplier)
+    {
+        m_moveSpeed *= (1f + multiplier);
+    }
+
     private void Update()
     {
         if (GameController.Instance.IsGameOver()) return;
