@@ -5,6 +5,7 @@ public class God : MonoBehaviour
 {
     [SerializeField] private Slider m_patienceSlider;
     [SerializeField] private float m_patienceDecreasingSpeed = 1f;
+    [SerializeField] private float m_patienceDecreaseMultiplier = 0.05f;
     [SerializeField] private float m_totalPatience = 100f;
 
     [SerializeField] private Animator m_upgradeMoveSpeedAnim;
@@ -35,6 +36,7 @@ public class God : MonoBehaviour
         UpdatePatienceSlider();
         GameController.Instance.AddSacrifice();
         UpgradePlayer();
+        m_patienceDecreasingSpeed *= (1f + m_patienceDecreaseMultiplier);
     }
 
     private void UpgradePlayer()

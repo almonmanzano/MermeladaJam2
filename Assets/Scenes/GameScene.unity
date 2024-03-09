@@ -1517,6 +1517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_patienceSlider: {fileID: 625137475}
   m_patienceDecreasingSpeed: 1
+  m_patienceDecreaseMultiplier: 0.1
   m_totalPatience: 100
   m_upgradeMoveSpeedAnim: {fileID: 2106502610}
   m_upgradeProjectileSpeedAnim: {fileID: 252357463}
@@ -5968,6 +5969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_patienceSlider: {fileID: 15082565}
   m_patienceDecreasingSpeed: 1
+  m_patienceDecreaseMultiplier: 0.1
   m_totalPatience: 100
   m_upgradeMoveSpeedAnim: {fileID: 59945761}
   m_upgradeProjectileSpeedAnim: {fileID: 584066909}
