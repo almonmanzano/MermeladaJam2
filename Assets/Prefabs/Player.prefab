@@ -1503,7 +1503,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2330655970975116954}
   - component: {fileID: 2493103366780349441}
-  - component: {fileID: 583591163436125687}
+  - component: {fileID: 9109271364155899932}
+  - component: {fileID: 8738253876315770125}
+  - component: {fileID: 2973822279660617378}
   - component: {fileID: 5071861920927814122}
   m_Layer: 0
   m_Name: Player
@@ -1547,8 +1549,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_rotationSpeed: 25
   m_moveSpeed: 30
---- !u!58 &583591163436125687
-CircleCollider2D:
+--- !u!50 &9109271364155899932
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449527979769145797}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &8738253876315770125
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1579,9 +1608,22 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
+  m_Offset: {x: -0.39, y: 0}
+  m_Size: {x: 1.53, y: 1.31}
+  m_Direction: 1
+--- !u!114 &2973822279660617378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449527979769145797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8415d002a22d80e42a7108679c16f22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enlargeSpeed: 0.3
 --- !u!114 &5071861920927814122
 MonoBehaviour:
   m_ObjectHideFlags: 0
