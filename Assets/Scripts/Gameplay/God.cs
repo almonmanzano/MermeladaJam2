@@ -33,6 +33,7 @@ public class God : MonoBehaviour
     {
         m_patience = m_totalPatience;
         UpdatePatienceSlider();
+        GameController.Instance.AddSacrifice();
         UpgradePlayer();
     }
 

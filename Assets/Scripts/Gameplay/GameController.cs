@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -7,12 +8,21 @@ public class GameController : MonoBehaviour
     [SerializeField] private Animator m_gameOverAnim;
     [SerializeField] private ColorBallSpawner m_colorBallSpawner;
     [SerializeField] private EnemySpawner m_enemySpawner;
+    [SerializeField] private TextMeshProUGUI m_nSacrificesText;
+
+    private int m_nSacrifices = 0;
 
     private bool m_gameIsOver = false;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    public void AddSacrifice()
+    {
+        m_nSacrifices++;
+        m_nSacrificesText.text = m_nSacrifices.ToString();
     }
 
     public void PauseGame()
