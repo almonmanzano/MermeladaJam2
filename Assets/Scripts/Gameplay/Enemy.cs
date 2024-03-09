@@ -5,7 +5,13 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private string m_targetType = "ColorBall";
     [SerializeField] private float m_rotationSpeed = 25f;
-    [SerializeField] private float m_moveSpeed = 5f;
+    
+    private float m_moveSpeed = 5f;
+
+    public void SetMoveSpeed(float moveSpeed)
+    {
+        m_moveSpeed = moveSpeed;
+    }
 
     private void Update()
     {

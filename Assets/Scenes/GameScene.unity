@@ -4614,8 +4614,11 @@ MonoBehaviour:
   - {fileID: 5329058638214997482, guid: affd0b4f6993c4e4f974e5343f25dcf1, type: 3}
   m_minTimeBtwSpawns: 2
   m_maxTimeBtwSpawns: 3
+  m_timeBtwSpawnsDecrease: 0.01
   m_upperLeftBound: {fileID: 1723189971}
   m_bottomRightBound: {fileID: 2025291346}
+  m_initialEnemyMoveSpeed: 5
+  m_enemyMoveSpeedSum: 0.05
 --- !u!4 &1318420501
 Transform:
   m_ObjectHideFlags: 0
@@ -4928,10 +4931,10 @@ RectTransform:
   - {fileID: 1058838298}
   - {fileID: 185689465}
   - {fileID: 1031121833}
-  - {fileID: 1739893394}
-  - {fileID: 1373112638}
   - {fileID: 1963818869}
   - {fileID: 2030785165}
+  - {fileID: 1739893394}
+  - {fileID: 1373112638}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

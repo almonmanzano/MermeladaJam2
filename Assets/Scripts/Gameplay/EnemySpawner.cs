@@ -10,8 +10,14 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform m_upperLeftBound;
     [SerializeField] private Transform m_bottomRightBound;
 
+    [SerializeField] private float m_initialEnemyMoveSpeed = 5f;
+    [SerializeField] private float m_enemyMoveSpeedSum = 0.2f;
+
+    private float m_enemyMoveSpeed;
+
     private void Start()
     {
+        m_enemyMoveSpeed = m_initialEnemyMoveSpeed;
         StartCoroutine(SpawnEnemy());
     }
 
@@ -21,11 +27,13 @@ public class EnemySpawner : MonoBehaviour
         float x = Random.Range(m_upperLeftBound.position.x, m_bottomRightBound.position.x);
         float y = Random.Range(m_upperLeftBound.position.y, m_bottomRightBound.position.y);
         GameObject enemyObj = m_enemyPrefabs[Random.Range(0, m_enemyPrefabs.Length)];
-        Instantiate(enemyObj, new Vector2(x, y), Quaternion.identity);
+        GameObject enemyInstance = Instantiate(enemyObj, new Vector2(x, y), Quaternion.identity);
+        enemyInstance.GetComponent<Enemy>().SetMoveSpeed(m_enemyMoveSpeed);
 
         if (m_minTimeBtwSpawns > 0.1f) m_minTimeBtwSpawns -= m_timeBtwSpawnsDecrease;
         if (m_maxTimeBtwSpawns > 0.3f) m_maxTimeBtwSpawns -= m_timeBtwSpawnsDecrease;
-        print(m_minTimeBtwSpawns);
+
+        m_enemyMoveSpeed += m_enemyMoveSpeedSum;
 
         StartCoroutine(SpawnEnemy());
     }
