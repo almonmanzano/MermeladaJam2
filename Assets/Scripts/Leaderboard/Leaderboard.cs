@@ -24,28 +24,6 @@ public class Leaderboard : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            print("save score");
-            AddScore(32, "Lau");
-        }
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            //GetScores();
-            Test();
-        }
-    }
-
-    private async void Test()
-    {
-        print(1);
-        var test = await GetPlayerScore();
-        print(4);
-        print(test);
-    }
-
     public async Task<bool> AddScore(int score, string name)
     {
         name = name.Replace(" ", ""); // Remove blank spaces
