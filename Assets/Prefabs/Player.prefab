@@ -1524,7 +1524,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7159, y: 1.7159, z: 1.7159}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4913586355904302004}
@@ -1549,6 +1549,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_rotationSpeed: 25
   m_moveSpeed: 30
+  m_upperLeftBound: {fileID: 0}
+  m_bottomRightBound: {fileID: 0}
 --- !u!50 &9109271364155899932
 Rigidbody2D:
   serializedVersion: 4
@@ -1623,7 +1625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8415d002a22d80e42a7108679c16f22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_enlargeSpeed: 0.3
+  m_upgradeMultiplier: 0.05
 --- !u!114 &5071861920927814122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1636,9 +1638,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0c4089eaf7a2d40918236030fc188c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_startTimeBtwFireball: 0.3
+  m_fireballCooldown: 0.3
   m_fireballOrigin: {fileID: 7787349515490572693}
   m_fireball: {fileID: 6596095203304252536, guid: 1376dbebe5473e640a923672509c6147, type: 3}
+  m_fireballMoveSpeed: 30
 --- !u!1 &8754883439264011424
 GameObject:
   m_ObjectHideFlags: 0
