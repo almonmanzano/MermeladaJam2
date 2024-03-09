@@ -10,6 +10,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        if (GameController.Instance.IsGameOver()) return;
+
         // Fireball
         if (m_timeBtwFireball <= 0)
         {

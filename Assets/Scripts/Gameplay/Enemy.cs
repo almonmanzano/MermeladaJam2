@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (GameController.Instance.IsGameOver()) return;
+
         GameObject target = GetTarget();
         if (target != null)
         {
@@ -59,6 +61,10 @@ public class Enemy : MonoBehaviour
         if (collision.TryGetComponent(out colorBall))
         {
             Destroy(colorBall.gameObject);
+        }
+        if (collision.CompareTag("Player"))
+        {
+            GameController.Instance.GameOver();
         }
     }
 }

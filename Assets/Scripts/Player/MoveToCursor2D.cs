@@ -9,6 +9,8 @@ public class MoveToCursor2D : MonoBehaviour
 
     private void Update()
     {
+        if (GameController.Instance.IsGameOver()) return;
+
         Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         // Rotation

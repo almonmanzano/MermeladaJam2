@@ -16,7 +16,10 @@ public class God : MonoBehaviour
 
     private void Update()
     {
+        if (GameController.Instance.IsGameOver()) return;
+
         m_patience -= m_patienceDecreasingSpeed * Time.deltaTime;
+        CheckPatience();
         UpdatePatienceSlider();
     }
 
@@ -24,6 +27,14 @@ public class God : MonoBehaviour
     {
         m_patience = m_totalPatience;
         UpdatePatienceSlider();
+    }
+
+    private void CheckPatience()
+    {
+        if (m_patience <= 0f)
+        {
+            GameController.Instance.GameOver();
+        }
     }
 
     private void UpdatePatienceSlider()
