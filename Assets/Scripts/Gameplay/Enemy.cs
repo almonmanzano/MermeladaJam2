@@ -1,10 +1,11 @@
-using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private string m_targetType = "ColorBall";
     [SerializeField] private float m_rotationSpeed = 25f;
+    [SerializeField] private float m_beerProbability = 0.05f;
+    [SerializeField] private GameObject m_beerPrefab;
     
     private float m_moveSpeed = 5f;
 
@@ -70,7 +71,15 @@ public class Enemy : MonoBehaviour
         }
         if (collision.CompareTag("Player"))
         {
-            GameController.Instance.GameOver();
+            collision.GetComponent<Player>().CollideWithEnemy(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (Random.value < m_beerProbability)
+        {
+            Instantiate(m_beerPrefab, transform.position, Quaternion.identity);
         }
     }
 }

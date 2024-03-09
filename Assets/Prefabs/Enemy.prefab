@@ -358,7 +358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_targetType: Player
   m_rotationSpeed: 25
-  m_moveSpeed: 5
+  m_beerProbability: 0.05
+  m_beerPrefab: {fileID: 3179688504474849191, guid: e4f07112d320e414298ecd383b86cc83, type: 3}
 --- !u!58 &-4293745340540377013
 CircleCollider2D:
   m_ObjectHideFlags: 0
