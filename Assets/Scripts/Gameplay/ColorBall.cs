@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class ColorBall : MonoBehaviour
 {
-    private float m_enlargeDuration = 1f;
+    [SerializeField] private float m_enlargeDuration = 1f;
+
     private float m_lifeDuration = 20f;
     private float m_reduceDuration = 7f;
     private Vector3 m_originalScale;

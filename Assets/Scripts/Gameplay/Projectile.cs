@@ -10,12 +10,11 @@ public class Projectile : MonoBehaviour
         if (collision.CompareTag(m_tag))
         {
             // Damage enemy
-            //collision.GetComponent<Health>().TakeDamage(?);
-            print("Damage enemy: " + collision.name);
             if (m_destructionFx)
             {
                 Instantiate(m_destructionFx, transform.position, Quaternion.identity);
             }
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }
