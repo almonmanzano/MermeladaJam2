@@ -9,11 +9,11 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag(m_tag))
         {
-            // Damage enemy
             if (m_destructionFx)
             {
                 Instantiate(m_destructionFx, transform.position, Quaternion.identity);
             }
+            Camera.main.GetComponent<CameraShake>().Shake(0.1f, 0.99f);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
