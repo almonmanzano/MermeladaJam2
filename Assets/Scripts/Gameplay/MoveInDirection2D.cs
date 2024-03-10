@@ -12,5 +12,6 @@ public class MoveInDirection2D : MonoBehaviour
     private void Update()
     {
         transform.position += transform.right * m_moveSpeed * Time.deltaTime;
+        transform.GetChild(0).rotation = Quaternion.identity;
     }
 }
