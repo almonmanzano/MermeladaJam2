@@ -6,8 +6,15 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform m_fireballOrigin;
     [SerializeField] private GameObject m_fireball;
     [SerializeField] private float m_fireballMoveSpeed = 30f;
+    [SerializeField] private AudioClip[] m_attackSFXs;
 
     private float m_timeBtwFireball;
+    private AudioRandomizer m_audioRandomizer;
+
+    private void Awake()
+    {
+        m_audioRandomizer = GetComponent<AudioRandomizer>();
+    }
 
     public void UpgradeProjectileSpeed(float multiplier)
     {
@@ -28,6 +35,8 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
+                m_audioRandomizer.PlayRandom(m_attackSFXs);
+
                 GameObject fireball = Instantiate(m_fireball, m_fireballOrigin.position, transform.rotation);
                 fireball.GetComponent<MoveInDirection2D>().SetMoveSpeed(m_fireballMoveSpeed);
 

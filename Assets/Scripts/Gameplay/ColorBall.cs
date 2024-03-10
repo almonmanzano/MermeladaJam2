@@ -72,12 +72,13 @@ public class ColorBall : MonoBehaviour
 
     public IEnumerator BeSacrified(float duration)
     {
+        Vector3 currentScale = transform.localScale;
         Destroy(gameObject.GetComponent<Collider2D>());
         float t = 0f;
         while (!Mathf.Approximately(transform.localScale.x, 0f))
         {
             t += Time.deltaTime / duration;
-            transform.localScale = Vector3.Lerp(m_originalScale, Vector3.zero, t);
+            transform.localScale = Vector3.Lerp(currentScale, Vector3.zero, t);
             yield return new WaitForEndOfFrame();
         }
         transform.localScale = Vector3.zero;

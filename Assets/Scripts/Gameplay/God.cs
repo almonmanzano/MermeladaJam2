@@ -14,11 +14,13 @@ public class God : MonoBehaviour
 
     private float m_patience;
     private Player m_player;
+    private AudioSource m_audioSource;
 
     private void Start()
     {
         m_patience = m_totalPatience;
         m_player = FindObjectOfType<Player>();
+        m_audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -32,6 +34,7 @@ public class God : MonoBehaviour
 
     public void Sacrifice()
     {
+        m_audioSource.Play();
         m_patience = m_totalPatience;
         UpdatePatienceSlider();
         GameController.Instance.AddSacrifice();
