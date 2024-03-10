@@ -16,10 +16,13 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject m_addYourNamePanel;
     [SerializeField] private TMP_InputField m_playerNameInputText;
 
+    [SerializeField] private AudioSource[] m_themeAudioSources;
+
     [SerializeField] private AudioSource m_monster1DeathAudioSource;
     [SerializeField] private AudioSource m_monster2DeathAudioSource;
 
     [SerializeField] private AudioSource m_beerAudioSource;
+    [SerializeField] private AudioSource m_gameOverAudioSource;
 
     private int m_nSacrifices = 0;
 
@@ -48,6 +51,8 @@ public class GameController : MonoBehaviour
 
     public async void GameOver()
     {
+        ManageGameOverAudio();
+
         m_gameIsOver = true;
         m_colorBallSpawner.StopAllCoroutines();
         m_enemySpawner.StopAllCoroutines();
@@ -62,6 +67,15 @@ public class GameController : MonoBehaviour
         {
             UpdateLeaderboard();
         }
+    }
+
+    private void ManageGameOverAudio()
+    {
+        foreach (AudioSource audioSource in m_themeAudioSources)
+        {
+            audioSource.Stop();
+        }
+        m_gameOverAudioSource.Play();
     }
 
     public async void SaveScore()
