@@ -271,6 +271,10 @@ PrefabInstance:
       value: ColorBall
       objectReference: {fileID: 0}
     - target: {fileID: -4757293790689762578, guid: 467bac64070829a4495d8c01e137738f, type: 3}
+      propertyPath: m_beerProbability
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: -4757293790689762578, guid: 467bac64070829a4495d8c01e137738f, type: 3}
       propertyPath: m_deathSFXs.Array.size
       value: 2
       objectReference: {fileID: 0}

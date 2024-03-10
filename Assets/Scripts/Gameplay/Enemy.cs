@@ -81,20 +81,27 @@ public class Enemy : MonoBehaviour
     {
         if (!gameObject.scene.isLoaded) return; // To avoid error "some objects were not cleaned up when closing the scene"
 
+        // Beer
         if (Random.value < m_beerProbability)
         {
             Instantiate(m_beerPrefab, transform.position, Quaternion.identity);
+            GameController.Instance.PlayBeerSFX();
         }
+
         Instantiate(m_deathVFX, transform.position, Quaternion.identity);
 
+        PlayDeathSFX();
+    }
+
+    private void PlayDeathSFX()
+    {
+        int rnd = Random.Range(0, m_deathSFXs.Length);
         if (m_targetType == "Player")
         {
-            int rnd = Random.Range(0, m_deathSFXs.Length);
             GameController.Instance.Monster1Death(m_deathSFXs[rnd]);
         }
         else // if (m_targetType == "ColorBall")
         {
-            int rnd = Random.Range(0, m_deathSFXs.Length);
             GameController.Instance.Monster2Death(m_deathSFXs[rnd]);
         }
     }

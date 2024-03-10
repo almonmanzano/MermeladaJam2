@@ -16,8 +16,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject m_addYourNamePanel;
     [SerializeField] private TMP_InputField m_playerNameInputText;
 
-    [SerializeField] private AudioSource m_monster1Death;
-    [SerializeField] private AudioSource m_monster2Death;
+    [SerializeField] private AudioSource m_monster1DeathAudioSource;
+    [SerializeField] private AudioSource m_monster2DeathAudioSource;
+
+    [SerializeField] private AudioSource m_beerAudioSource;
 
     private int m_nSacrifices = 0;
 
@@ -104,13 +106,18 @@ public class GameController : MonoBehaviour
 
     public void Monster1Death(AudioClip clip)
     {
-        m_monster1Death.clip = clip;
-        m_monster1Death.Play();
+        m_monster1DeathAudioSource.clip = clip;
+        m_monster1DeathAudioSource.Play();
     }
 
     public void Monster2Death(AudioClip clip)
     {
-        m_monster2Death.clip = clip;
-        m_monster2Death.Play();
+        m_monster2DeathAudioSource.clip = clip;
+        m_monster2DeathAudioSource.Play();
+    }
+
+    public void PlayBeerSFX()
+    {
+        m_beerAudioSource.Play();
     }
 }
