@@ -38,7 +38,6 @@ public class Leaderboard : MonoBehaviour
         try
         {
             var scoreResponse = await LeaderboardsService.Instance.GetPlayerScoreAsync(LeaderboardId);
-            print(scoreResponse.Score);
             int score = (int)scoreResponse.Score;
             return score;
         }

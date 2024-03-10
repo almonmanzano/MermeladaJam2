@@ -162,3 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_enlargeDuration: 1
+  m_colorBallEatenVFX: {fileID: 5110360845923721850, guid: 962dbfe261eaab54292bb725f5f18a79, type: 3}

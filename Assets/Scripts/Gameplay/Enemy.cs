@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float m_rotationSpeed = 25f;
     [SerializeField] private float m_beerProbability = 0.05f;
     [SerializeField] private GameObject m_beerPrefab;
+    [SerializeField] private GameObject m_deathVFX;
     
     private float m_moveSpeed = 5f;
 
@@ -67,7 +68,7 @@ public class Enemy : MonoBehaviour
         ColorBall colorBall;
         if (collision.TryGetComponent(out colorBall))
         {
-            Destroy(colorBall.gameObject);
+            colorBall.BeEaten();
         }
         if (collision.CompareTag("Player"))
         {
@@ -77,9 +78,12 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (!gameObject.scene.isLoaded) return; // To avoid error "some objects were not cleaned up when closing the scene"
+
         if (Random.value < m_beerProbability)
         {
             Instantiate(m_beerPrefab, transform.position, Quaternion.identity);
         }
+        Instantiate(m_deathVFX, transform.position, Quaternion.identity);
     }
 }

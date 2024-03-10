@@ -4,6 +4,7 @@ using UnityEngine;
 public class ColorBall : MonoBehaviour
 {
     [SerializeField] private float m_enlargeDuration = 1f;
+    [SerializeField] private GameObject m_colorBallEatenVFX;
 
     private float m_lifeDuration = 20f;
     private float m_reduceDuration = 7f;
@@ -67,5 +68,25 @@ public class ColorBall : MonoBehaviour
         {
             m_inArea = false;
         }
+    }
+
+    public IEnumerator BeSacrified(float duration)
+    {
+        Destroy(gameObject.GetComponent<Collider2D>());
+        float t = 0f;
+        while (!Mathf.Approximately(transform.localScale.x, 0f))
+        {
+            t += Time.deltaTime / duration;
+            transform.localScale = Vector3.Lerp(m_originalScale, Vector3.zero, t);
+            yield return new WaitForEndOfFrame();
+        }
+        transform.localScale = Vector3.zero;
+        Destroy(gameObject);
+    }
+
+    public void BeEaten()
+    {
+        Instantiate(m_colorBallEatenVFX, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

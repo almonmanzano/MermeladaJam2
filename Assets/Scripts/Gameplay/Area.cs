@@ -8,6 +8,8 @@ public class Area : MonoBehaviour
     [SerializeField] private int m_nBallsForSacrifice = 5;
     [SerializeField] private TextMeshProUGUI m_nBallsText;
     [SerializeField] private God m_god;
+    [SerializeField] private GameObject m_sacrificeVFX;
+    [SerializeField] private Transform m_sacrificePoint;
 
     private List<GameObject> m_balls = new List<GameObject>();
 
@@ -39,8 +41,9 @@ public class Area : MonoBehaviour
             m_god.Sacrifice();
             foreach (GameObject ball in toDestroy)
             {
-                Destroy(ball);
+                StartCoroutine(ball.GetComponent<ColorBall>().BeSacrified(0.5f));
             }
+            Instantiate(m_sacrificeVFX, m_sacrificePoint.position, m_sacrificeVFX.transform.rotation);
         }
     }
 

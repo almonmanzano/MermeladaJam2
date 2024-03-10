@@ -77,7 +77,6 @@ public class GameController : MonoBehaviour
     private async void UpdateLeaderboard()
     {
         Dictionary<string, int> scores = await m_leaderboard.GetScores();
-        print(scores);
         int i = 0;
         foreach (KeyValuePair<string, int> pair in scores)
         {
