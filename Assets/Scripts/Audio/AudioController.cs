@@ -8,9 +8,6 @@ public class AudioController : MonoBehaviour
     [SerializeField] private AudioSource[] m_musicSources;
     [SerializeField] private AudioSource[] m_sfxSources;
 
-    private static float m_musicVolumeValue = 0.5f;
-    private static float m_sfxVolumeValue = 0.5f;
-
     private void Start()
     {
         UpdateSliders();
@@ -20,31 +17,26 @@ public class AudioController : MonoBehaviour
 
     public void SetMusicVolume()
     {
+        if (m_musicVolumeSlider != null) GameData.MusicVolume = m_musicVolumeSlider.value;
         foreach (AudioSource source in m_musicSources)
         {
-            source.volume = m_musicVolumeSlider.value;
+            source.volume = GameData.MusicVolume;
         }
     }
 
     public void SetSFXVolume()
     {
+        if (m_sfxVolumeSlider != null) GameData.SFXVolume = m_sfxVolumeSlider.value;
         foreach (AudioSource source in m_sfxSources)
         {
-            source.volume = m_sfxVolumeSlider.value;
+            source.volume = GameData.SFXVolume;
         }
     }
 
     public void UpdateSliders()
     {
-        if (m_musicVolumeSlider != null)
-        {
-            m_musicVolumeSlider.value = m_musicVolumeValue;
-        }
-
-        if (m_sfxVolumeSlider != null)
-        {
-            m_sfxVolumeSlider.value = m_sfxVolumeValue;
-        }
+        if (m_musicVolumeSlider != null) m_musicVolumeSlider.value = GameData.MusicVolume;
+        if (m_sfxVolumeSlider != null) m_sfxVolumeSlider.value = GameData.SFXVolume;
     }
 
     public void PlayAudio(AudioSource source, AudioClip clip)
@@ -57,5 +49,13 @@ public class AudioController : MonoBehaviour
     {
         source.clip = clips[Random.Range(0, clips.Length)];
         source.Play();
+    }
+
+    public void StopAllSFX()
+    {
+        foreach (AudioSource source in m_sfxSources)
+        {
+            source.Stop();
+        }
     }
 }
