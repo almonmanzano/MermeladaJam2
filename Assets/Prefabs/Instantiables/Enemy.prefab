@@ -190,6 +190,9 @@ MonoBehaviour:
   m_beerProbability: 0.05
   m_beerPrefab: {fileID: 3179688504474849191, guid: e4f07112d320e414298ecd383b86cc83, type: 3}
   m_deathVFX: {fileID: 6203194301596079098, guid: d2d1e9d79489abd4b90140adfcb5b873, type: 3}
+  m_deathSFXs:
+  - {fileID: 8300000, guid: eece459d46ba66d49811d6bb8affd546, type: 3}
+  - {fileID: 8300000, guid: 236cf80fcbccdf84ea7acce8068e7747, type: 3}
 --- !u!58 &-4293745340540377013
 CircleCollider2D:
   m_ObjectHideFlags: 0

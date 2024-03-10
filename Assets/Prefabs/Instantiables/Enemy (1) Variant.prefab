@@ -270,6 +270,18 @@ PrefabInstance:
       propertyPath: m_targetType
       value: ColorBall
       objectReference: {fileID: 0}
+    - target: {fileID: -4757293790689762578, guid: 467bac64070829a4495d8c01e137738f, type: 3}
+      propertyPath: m_deathSFXs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4757293790689762578, guid: 467bac64070829a4495d8c01e137738f, type: 3}
+      propertyPath: m_deathSFXs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b17b59bb080d1594b98cde3970fde065, type: 3}
+    - target: {fileID: -4757293790689762578, guid: 467bac64070829a4495d8c01e137738f, type: 3}
+      propertyPath: m_deathSFXs.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7556092ecdf9a984bbef57ababdf05dc, type: 3}
     - target: {fileID: 4449461001093598486, guid: 467bac64070829a4495d8c01e137738f, type: 3}
       propertyPath: m_Name
       value: Enemy (1) Variant

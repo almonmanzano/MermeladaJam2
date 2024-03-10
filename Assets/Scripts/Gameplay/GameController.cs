@@ -16,6 +16,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject m_addYourNamePanel;
     [SerializeField] private TMP_InputField m_playerNameInputText;
 
+    [SerializeField] private AudioSource m_monster1Death;
+    [SerializeField] private AudioSource m_monster2Death;
+
     private int m_nSacrifices = 0;
 
     private bool m_gameIsOver = false;
@@ -97,5 +100,17 @@ public class GameController : MonoBehaviour
     public bool IsGameOver()
     {
         return m_gameIsOver;
+    }
+
+    public void Monster1Death(AudioClip clip)
+    {
+        m_monster1Death.clip = clip;
+        m_monster1Death.Play();
+    }
+
+    public void Monster2Death(AudioClip clip)
+    {
+        m_monster2Death.clip = clip;
+        m_monster2Death.Play();
     }
 }

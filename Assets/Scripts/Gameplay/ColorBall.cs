@@ -90,4 +90,9 @@ public class ColorBall : MonoBehaviour
         Instantiate(m_colorBallEatenVFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
 }

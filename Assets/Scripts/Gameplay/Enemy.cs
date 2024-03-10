@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float m_beerProbability = 0.05f;
     [SerializeField] private GameObject m_beerPrefab;
     [SerializeField] private GameObject m_deathVFX;
+    [SerializeField] private AudioClip[] m_deathSFXs; 
     
     private float m_moveSpeed = 5f;
 
@@ -38,17 +39,11 @@ public class Enemy : MonoBehaviour
 
     private GameObject GetTarget()
     {
-        // Target is Player
-        if (m_targetType == "Player")
-        {
-            return GameObject.FindWithTag("Player");
-        }
-
         // Target is ColorBall
-        float minDist = Mathf.Infinity;
-        GameObject closestTarget = null;
         if (m_targetType == "ColorBall")
         {
+            float minDist = Mathf.Infinity;
+            GameObject closestTarget = null;
             ColorBall[] colorBalls = FindObjectsOfType<ColorBall>();
             foreach (ColorBall colorBall in colorBalls)
             {
@@ -59,8 +54,14 @@ public class Enemy : MonoBehaviour
                     closestTarget = colorBall.gameObject;
                 }
             }
+            if (closestTarget != null)
+            {
+                return closestTarget;
+            }
         }
-        return closestTarget;
+
+        // Target is Player, or there are no targets
+        return GameObject.FindWithTag("Player");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -85,5 +86,16 @@ public class Enemy : MonoBehaviour
             Instantiate(m_beerPrefab, transform.position, Quaternion.identity);
         }
         Instantiate(m_deathVFX, transform.position, Quaternion.identity);
+
+        if (m_targetType == "Player")
+        {
+            int rnd = Random.Range(0, m_deathSFXs.Length);
+            GameController.Instance.Monster1Death(m_deathSFXs[rnd]);
+        }
+        else // if (m_targetType == "ColorBall")
+        {
+            int rnd = Random.Range(0, m_deathSFXs.Length);
+            GameController.Instance.Monster2Death(m_deathSFXs[rnd]);
+        }
     }
 }
