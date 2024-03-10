@@ -4997,9 +4997,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1330847342}
     - target: {fileID: 4430458653737047193, guid: 577d8b50032e8154bb8a68d1de3324c5, type: 3}
+      propertyPath: m_sfxSources.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430458653737047193, guid: 577d8b50032e8154bb8a68d1de3324c5, type: 3}
       propertyPath: m_musicSources.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4430458653737047193, guid: 577d8b50032e8154bb8a68d1de3324c5, type: 3}
+      propertyPath: m_sfxSources.Array.data[0]
+      value: 
+      objectReference: {fileID: 1884822971}
     - target: {fileID: 4430458653737047193, guid: 577d8b50032e8154bb8a68d1de3324c5, type: 3}
       propertyPath: m_musicSources.Array.data[0]
       value: 
