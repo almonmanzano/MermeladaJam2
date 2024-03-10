@@ -8306,7 +8306,7 @@ MonoBehaviour:
   m_nBallsForSacrifice: 1
   m_nBallsText: {fileID: 807856717}
   m_god: {fileID: 1939906407}
-  m_sacrificeVFX: {fileID: 1271843942100807702, guid: 1195979bdf0631e48a559083210bc52d, type: 3}
+  m_sacrificeVFX: {fileID: 7971120448066338091, guid: a49d0965c4e385e4ea5ae2c371cbfcce, type: 3}
   m_sacrificePoint: {fileID: 119723843}
 --- !u!212 &1814858992
 SpriteRenderer:

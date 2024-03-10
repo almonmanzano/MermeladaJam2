@@ -120,6 +120,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3731258381332537613, guid: ea76ea6172c7545499e7b3b6e06ce910, type: 3}
+      propertyPath: m_colorBallEatenVFX
+      value: 
+      objectReference: {fileID: 9010344434099804754, guid: 80235408ba0764745bb821598a2bd835, type: 3}
     - target: {fileID: 6557077532057608733, guid: ea76ea6172c7545499e7b3b6e06ce910, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6
@@ -161,7 +165,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5718366056348583134, guid: ea76ea6172c7545499e7b3b6e06ce910, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6557077532057608733, guid: ea76ea6172c7545499e7b3b6e06ce910, type: 3}
       insertIndex: -1
