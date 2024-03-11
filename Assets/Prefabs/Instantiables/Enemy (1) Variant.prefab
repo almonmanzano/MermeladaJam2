@@ -286,6 +286,10 @@ PrefabInstance:
       propertyPath: m_deathSFXs.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 7556092ecdf9a984bbef57ababdf05dc, type: 3}
+    - target: {fileID: 3998507636515076650, guid: 467bac64070829a4495d8c01e137738f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: dce95b5ede610a14ba28b429c31c2570, type: 2}
     - target: {fileID: 4449461001093598486, guid: 467bac64070829a4495d8c01e137738f, type: 3}
       propertyPath: m_Name
       value: Enemy (1) Variant
