@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class God : MonoBehaviour
 {
     [SerializeField] private Slider m_patienceSlider;
+    [SerializeField] private Image m_dangerImage;
+    [SerializeField] private float m_dangerZone = 0.25f;
     [SerializeField] private float m_patienceDecreasingSpeed = 1f;
     [SerializeField] private float m_patienceDecreaseMultiplier = 0.05f;
     [SerializeField] private float m_totalPatience = 100f;
@@ -67,6 +69,8 @@ public class God : MonoBehaviour
 
     private void CheckPatience()
     {
+        m_dangerImage.enabled = m_patience / m_totalPatience < m_dangerZone;
+
         if (m_patience <= 0f)
         {
             GameController.Instance.GameOver();
