@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
     //[SerializeField] private float m_enlargeSpeed = 0.01f;
     [SerializeField] private float m_upgradeMultiplier = 0.05f;
     [SerializeField] private GameObject m_beerIndicator;
+    [SerializeField] private AudioSource m_ayAudioSource;
 
     private PlayerAttack m_playerAttack;
     private MoveToCursor2D m_playerMovement;
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
     {
         if (m_hasBeer)
         {
+            m_ayAudioSource.Play();
             SetBeer(false);
             Destroy(enemy);
         }
