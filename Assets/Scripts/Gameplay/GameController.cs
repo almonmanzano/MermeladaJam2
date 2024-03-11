@@ -100,6 +100,7 @@ public class GameController : MonoBehaviour
         foreach (KeyValuePair<string, int> pair in scores)
         {
             string name = pair.Key;
+            name = name.Split('#')[0];
             int score = pair.Value;
             GameObject panel = m_leaderboardPanels[i];
             panel.SetActive(true);

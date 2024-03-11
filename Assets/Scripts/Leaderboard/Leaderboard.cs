@@ -54,7 +54,7 @@ public class Leaderboard : MonoBehaviour
         Debug.Log(JsonConvert.SerializeObject(scoreResponse));
         foreach (var result in scoreResponse.Results)
         {
-            string playerName = result.PlayerName.Split('#')[0];
+            string playerName = result.PlayerName;
             int score = (int)result.Score;
             scores[playerName] = score;
         }

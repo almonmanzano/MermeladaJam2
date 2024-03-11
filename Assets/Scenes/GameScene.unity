@@ -791,7 +791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7264151, g: 0, b: 0.0959415, a: 1}
+  m_Color: {r: 0.7264151, g: 0, b: 0.0959415, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7416,7 +7416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7264151, g: 0, b: 0.0959415, a: 1}
+  m_Color: {r: 0.7264151, g: 0, b: 0.0959415, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10709,6 +10709,10 @@ PrefabInstance:
       propertyPath: m_bottomRightBound
       value: 
       objectReference: {fileID: 935006705}
+    - target: {fileID: 2673898935309966973, guid: a802de6c5dcf1204c88e5b58a7947e8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2973822279660617378, guid: a802de6c5dcf1204c88e5b58a7947e8c, type: 3}
       propertyPath: m_beerIndicator
       value: 
@@ -10733,6 +10737,10 @@ PrefabInstance:
       propertyPath: m_attackSFXs.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: f495bbc0dc731b34ab8ea0df5d163b66, type: 3}
+    - target: {fileID: 8449527979769145797, guid: a802de6c5dcf1204c88e5b58a7947e8c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 8449527979769145797, guid: a802de6c5dcf1204c88e5b58a7947e8c, type: 3}
       propertyPath: m_Name
       value: Player
