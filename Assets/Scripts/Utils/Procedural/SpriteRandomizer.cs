@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteRandomizer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Sprite[] m_sprites;
 
-    // Update is called once per frame
-    void Update()
+    private SpriteRenderer m_renderer;
+
+    private void Start()
     {
-        
+        m_renderer = GetComponent<SpriteRenderer>();
+        int rnd = Random.Range(0, m_sprites.Length);
+        m_renderer.sprite = m_sprites[rnd];
     }
 }

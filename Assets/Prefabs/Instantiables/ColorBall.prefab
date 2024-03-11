@@ -187,6 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 24311279645258475}
   - component: {fileID: 2815366368145953779}
+  - component: {fileID: 2376040613119303885}
   m_Layer: 0
   m_Name: soul5
   m_TagString: Untagged
@@ -261,6 +262,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2376040613119303885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2651522915578954990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5925c75f3e702b4d9fdb44267725703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sprites:
+  - {fileID: 21300000, guid: e631a83bd5fd1824bbc804f729407607, type: 3}
+  - {fileID: 21300000, guid: c61664565d7d24f4d830d4bbad251621, type: 3}
+  - {fileID: 21300000, guid: 048cda01235e13443be081aced296db2, type: 3}
 --- !u!1 &5122336996995998693
 GameObject:
   m_ObjectHideFlags: 0
